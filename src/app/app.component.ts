@@ -10,12 +10,13 @@ import { CalendarcomponentComponent } from './calendarcomponent/calendarcomponen
 import { EventModalComponentComponent } from './event-modal-component/event-modal-component.component';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { ProgressiveComponent } from './progressive/progressive.component';
+import { IntersectionObserverModule } from 'ngx-intersection-observer';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,MatDialogModule,ProgressiveComponent,EventModalComponentComponent,TablecomponentComponent, CalendarcomponentComponent, SidenavcomponentComponent ,ChartcomponentComponent, SummarycomponentComponent],
+  imports: [RouterOutlet,MatDialogModule,IntersectionObserverModule,ProgressiveComponent,EventModalComponentComponent,TablecomponentComponent, CalendarcomponentComponent, SidenavcomponentComponent ,ChartcomponentComponent, SummarycomponentComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   providers: [
@@ -27,6 +28,18 @@ export class AppComponent implements AfterViewInit {
   title = 'GeegPay';
   showcalendar: boolean = false
   showProfilediv: boolean = false
+  inView: boolean = false;
+  progress: number = 20;
+
+onIntersectionCasting($event: any): { target: Element; visible: boolean } {
+  return $event;
+}
+
+  onIntersection({ visible }: { target: Element; visible: boolean }): void {
+    if (visible) {
+      this.inView = true;
+    }
+  }
 
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object,private dialogRef: MatDialogRef<EventModalComponentComponent>,
