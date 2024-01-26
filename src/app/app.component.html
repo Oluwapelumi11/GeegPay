@@ -11,7 +11,7 @@
             <p  class="">Dashboard</p>
         </div> 
         
-        <div class=" w-full space-x-4 ">
+        <div class=" w-full space-x-4 h-fit">
         <div class="flex  items-center px-1    sm:gap-5">
             <form action="" class="flex w-4/6  sm:h-[48px] h-[35px] items-center sm:w-[349px]  rounded-3xl mx-3 border border-[#DADDDD] text-[#DADDDD] bg-white pl-4 gap-2">
                 <img src="../assets/svgs/search.svg" class="w-[18px] h-[18px]" alt="">
@@ -64,7 +64,8 @@
     <!-- sales trends and summary div -->
     <div class="grid sm:gap-4 gap-2 grid-cols-3">
             <app-chartcomponent class="sm:col-span-2 col-span-full py-3" ></app-chartcomponent>
-
+            
+       
             <app-summarycomponent class="sm:col-span-1 col-span-full py-3 grid sm:gap-4 gap-2 grid-cols-2 sm:p-4 p-1"></app-summarycomponent>
 
 </div>
@@ -72,7 +73,17 @@
 
     <app-tablecomponent class="md:col-span-2 col-span-full sm:p-4 w-full py-3 rounded-[14px] border bg-[#FFFFFF]"></app-tablecomponent>
 
-    <app-progressive  [progress]="progress" ngxIntersection (intersection)="onIntersection(onIntersectionCasting($event))" class=" col-span-full  "></app-progressive>
+
+    <div class=" col-span-full md:col-span-1 px-3 gap-4">
+
+        <div class="w-full flex justify-between px-5  sm:px-0 sm:py-0 py-4 font-jakarta ">
+            <p class="font-semibold text-lg text-[#26282C]">Top Platform</p>
+            <p class="text-[#34CAA5] font-medium text-lg">See All</p>
+        </div>
+        @for (progress of progressDataList; track $index) {
+            <app-progressive  [progress]="progress" ngxIntersection (intersection)="onIntersection(onIntersectionCasting($event))" ></app-progressive>
+        }
+    </div>
     
 </div>
 <!-- end of top platform div -->

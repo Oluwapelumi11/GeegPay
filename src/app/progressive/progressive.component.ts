@@ -1,6 +1,8 @@
 import { AfterViewInit, Component, Input} from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { IntersectionObserverModule } from 'ngx-intersection-observer';
+import { ProgressData } from '../generals';
+
 
 @Component({
   selector: 'app-progressive',
@@ -13,31 +15,23 @@ import { IntersectionObserverModule } from 'ngx-intersection-observer';
   ],
   imports: [IntersectionObserverModule],
   template: `
-     <div class="w-full flex justify-between px-9  sm:px-0 sm:py-0 py-2 font-jakarta ">
-                                    <p class="font-semibold text-lg text-[#26282C]">Top Platform</p>
-                                    <p class="text-[#34CAA5] font-medium text-lg">See All</p>
-      </div>
-      <div class="">
-        <p>Book Bazaar</p>
-        <div>
-          <span class="bg-red-500" [style.width.%]="progress" [@progressAnimation]="progressState">
-
-          </span>
-        </div>
-
-      </div>
-
      
+      <div class="">
+    <p class="text-xl font-semibold mb-4 text-[#22242C]">{{progress.name}}</p>
+    <div class="w-full h-6 bg-gray-300 rounded">
+        <div class="h-full bg-blue-500 rounded transition-all" [style.width.%]="progress.progress"></div>
+    </div>
+  </div>
 
+
+  
 
   `,
   styleUrl: './progressive.component.css'
 })
 export class ProgressiveComponent implements AfterViewInit {
-
-  @Input() progress: number = 0;
+  @Input() progress!:ProgressData;
   progressState: { progress: number } = { progress: 0 };
-
 
 
    inView: boolean = false;
@@ -49,4 +43,10 @@ onIntersection({ target, visible }: { target: Element; visible: boolean }): void
     this.inView = true;
   }
 }
+
+
+
+ // An array of progress values
+
+ 
 }

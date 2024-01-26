@@ -11,6 +11,7 @@ import { EventModalComponentComponent } from './event-modal-component/event-moda
 import { MAT_DIALOG_DATA, MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { ProgressiveComponent } from './progressive/progressive.component';
 import { IntersectionObserverModule } from 'ngx-intersection-observer';
+import { ProgressData } from './generals';
 
 
 @Component({
@@ -29,7 +30,7 @@ export class AppComponent implements AfterViewInit {
   showcalendar: boolean = false
   showProfilediv: boolean = false
   inView: boolean = false;
-  progress: number = 20;
+  
 
 onIntersectionCasting($event: any): { target: Element; visible: boolean } {
   return $event;
@@ -70,4 +71,67 @@ onIntersectionCasting($event: any): { target: Element; visible: boolean } {
 showprofile(): Boolean{
   return this.showProfilediv = !this.showProfilediv;
 }
+
+
+
+getColor(progress: number): string {
+  if (progress < 20) {
+    return 'red';
+  } else if (progress < 30) {
+    return 'orange';
+  } else if (progress < 40) {
+    return 'yellow';
+  } else if (progress < 50) {
+    return 'green';
+  } else if (progress < 60) {
+    return 'blue';
+  } else {
+    return 'purple';
+  }
+}
+ progressDataList: ProgressData[] = [
+{
+  name: 'Item 1',
+  amount: '$100',
+  progress: 25,
+  increase: 5
+},
+{
+  name: 'Item 2',
+  amount: '$150',
+  progress: 40,
+  increase: 10
+},
+{
+  name: 'Item 3',
+  amount: '$200',
+  progress: 60,
+  increase: 15
+},
+{
+  name: 'Item 4',
+  amount: '$120',
+  progress: 75,
+  increase: 8
+},
+{
+  name: 'Item 5',
+  amount: '$180',
+  progress: 90,
+  increase: 12
+},
+{
+  name: 'Item 6',
+  amount: '$250',
+  progress: 20,
+  increase: 3
+},
+{
+  name: 'Item 7',
+  amount: '$300',
+  progress: 50,
+  increase: 7
+}
+];
+
 }
