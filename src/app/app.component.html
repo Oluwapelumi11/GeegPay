@@ -63,18 +63,17 @@
 <div class="grid   sm:gap-4 gap-2 grid-rows-2">
     <!-- sales trends and summary div -->
     <div class="grid sm:gap-4 gap-2 grid-cols-3">
-            <app-chartcomponent class="sm:col-span-2 col-span-full" ></app-chartcomponent>
+            <app-chartcomponent class="sm:col-span-2 col-span-full py-3" ></app-chartcomponent>
 
-            <app-summarycomponent class="sm:col-span-1 col-span-full grid sm:gap-4 gap-2 grid-cols-2 sm:p-4 p-1"></app-summarycomponent>
+            <app-summarycomponent class="sm:col-span-1 col-span-full py-3 grid sm:gap-4 gap-2 grid-cols-2 sm:p-4 p-1"></app-summarycomponent>
 
 </div>
-<div class="sm:grid md:gap-4 flex sm:gap-2 grid-cols-3">
+<div class="sm:grid md:gap-4 sm:gap-2 grid-cols-3">
 
-    <app-tablecomponent class="md:col-span-2 col-span-full sm:p-4 w-full  rounded-[14px] border bg-[#FFFFFF]"></app-tablecomponent>
-    <app-progressive  [progress]="progress" ngxIntersection (intersection)="onIntersection(onIntersectionCasting($event))" class="md:col-span-1 col-span-full "></app-progressive>
-    <div>
-        
-    </div>
+    <app-tablecomponent class="md:col-span-2 col-span-full sm:p-4 w-full py-3 rounded-[14px] border bg-[#FFFFFF]"></app-tablecomponent>
+
+    <app-progressive  [progress]="progress" ngxIntersection (intersection)="onIntersection(onIntersectionCasting($event))" class=" col-span-full  "></app-progressive>
+    
 </div>
 <!-- end of top platform div -->
 </div>
