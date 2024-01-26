@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   template: `
    
                                 <!-- box component -->
-                                <div class="w-full h-fit p-1 rounded-[14px] bg-white">
+                                <div class="w-full h-fit p-1 rounded-[14px] bg-[#EDF2F7]">
                                     <div class="flex justify-between sm:py-4 px-2">
                                         <img src="../assets/svgs/Icon.svg" alt="">
                                         <img src="../assets/svgs/trend green.svg" alt="">
@@ -29,7 +29,7 @@ import { Component } from '@angular/core';
                                 <!-- box component -->
 
                                  <!-- box component -->
-                                 <div class="w-full h-fit p-1 rounded-[14px] bg-white">
+                                 <div class="w-full h-fit p-1 rounded-[14px] bg-[#EDF2F7]">
                                     <div class="flex justify-between sm:py-4 px-2">
                                         <img src="../assets/svgs/Icon rotate.svg" alt="">
                                         <img src="../assets/svgs/trend red.svg" alt="">
@@ -52,7 +52,7 @@ import { Component } from '@angular/core';
 
                                 
                                 <!-- box component -->
-                                 <div class="w-full h-fit p-1 rounded-[14px] bg-white">
+                                 <div class="w-full h-fit p-1 rounded-[14px] bg-[#EDF2F7]">
                                     <div class="flex justify-between sm:py-4 px-2">
                                         <img src="../assets/svgs/shop.svg" alt="">
                                         <img src="../assets/svgs/trend red.svg" alt="">
@@ -73,7 +73,7 @@ import { Component } from '@angular/core';
                                 </div>
                                 <!-- box component -->
                                 <!-- box component -->
-                                <div class="w-full h-fit p-1 rounded-[14px] bg-white">
+                                <div class="w-full h-fit p-1 rounded-[14px] bg-[#EDF2F7]">
                                    <div class="flex justify-between sm:py-4 px-2">
                                        <img src="../assets/svgs/Icon.svg" alt="">
                                        <img src="../assets/svgs/trend green.svg" alt="">
