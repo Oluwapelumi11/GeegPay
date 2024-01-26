@@ -74,15 +74,17 @@
     <app-tablecomponent class="md:col-span-2 col-span-full sm:p-4 w-full py-3 rounded-[14px] border bg-[#FFFFFF]"></app-tablecomponent>
 
 
-    <div class=" col-span-full md:col-span-1 px-3 gap-4">
+    <div class=" col-span-full md:col-span-1 px-3 gap-4 bg-white rounded-xl">
 
-        <div class="w-full flex justify-between px-5  sm:px-0 sm:py-0 py-4 font-jakarta ">
+        <div class="w-full flex justify-between px-3  py-4 font-jakarta ">
             <p class="font-semibold text-lg text-[#26282C]">Top Platform</p>
             <p class="text-[#34CAA5] font-medium text-lg">See All</p>
         </div>
-        @for (progress of progressDataList; track $index) {
-            <app-progressive  [progress]="progress" ngxIntersection (intersection)="onIntersection(onIntersectionCasting($event))" ></app-progressive>
-        }
+        <div class="h-[27rem] overflow-y-auto">
+            @for (progress of progressDataList; track $index) {
+                <app-progressive  [progress]="progress" ngxIntersection (intersection)="onIntersection(onIntersectionCasting($event))" ></app-progressive>
+            }
+        </div>
     </div>
     
 </div>

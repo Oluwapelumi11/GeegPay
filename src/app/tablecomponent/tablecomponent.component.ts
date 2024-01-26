@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
                                     <p class="font-semibold text-lg text-[#26282C]">Last Orders</p>
                                     <p class="text-[#34CAA5] font-medium text-lg">See All</p>
                                 </div>
-                                <div class="px-4 py-4 w-full bg-[#FFFFFF] rounded-b-xl  overflow-x-auto h-[20rem] overflow-y-auto">
+                                <div class="px-4 py-4 w-full bg-[#FFFFFF] rounded-b-xl  overflow-x-auto h-[27rem] overflow-y-auto">
                                     <table class="table-auto w-full h-fit  text-left rounded-xl ">
                                         <thead class="border-b border-[#EDF2F6] sm:h-[5rem] h-[2rem]" >
                                             <tr class="font-jakarta text-left font-semibold sm:font-medium sm:text-base text-[9px] self-center text-[#9CA4AB]">
