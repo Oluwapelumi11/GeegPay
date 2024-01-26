@@ -52,7 +52,7 @@
         </div>
     </div>
     </div>
-    <button class="bg-gray-700" (click)="openDialog()">clickkkkkkkk</button>
+    <button class="bg-gray-700 hidden" (click)="openDialog()">clickkkkkkkk</button>
     <!--end of  top bar -->
     <div class=" absolute right-0">
         profile div here
@@ -67,8 +67,8 @@
 </div>
 <div class="sm:grid md:gap-4 flex sm:gap-2 grid-cols-3">
 
-    <app-tablecomponent class="md:col-span-2 sm:col-span-full sm:p-4 w-full  rounded-[14px] border bg-[#FFFFFF]"></app-tablecomponent>
-    <app-progressive [progress]="progress" ngxIntersection (intersection)="onIntersection(onIntersectionCasting($event))" [@progressAnimation]="'in'" class="md:col-span-1 sm:col-span-full "></app-progressive>
+    <app-tablecomponent class="md:col-span-2 col-span-full sm:p-4 w-full  rounded-[14px] border bg-[#FFFFFF]"></app-tablecomponent>
+    <app-progressive class="sm:col-span-1 col-span-full " [progress]="progress" ngxIntersection (intersection)="onIntersection(onIntersectionCasting($event))" [@progressAnimation]="'in'" class="md:col-span-1 sm:col-span-full "></app-progressive>
     <div>
         
     </div>
