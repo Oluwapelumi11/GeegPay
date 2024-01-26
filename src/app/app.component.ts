@@ -54,6 +54,12 @@ onIntersectionCasting($event: any): { target: Element; visible: boolean } {
   togglecalendar(): Boolean {
     return this.showcalendar = !this.showcalendar
   }
+  shown:boolean = false;
+
+shownav(): boolean{
+  return this.shown=!this.shown;
+}
+
 
   openDialog() {
     const dialogRef = this.dialog.open(EventModalComponentComponent, {

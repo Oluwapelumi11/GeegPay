@@ -25,7 +25,8 @@ export class CalendarcomponentComponent {
     select: this.handleDateClick.bind(this),
     selectMirror: true,
     selectOverlap: false,
-    selectAllow: this.selectAllow.bind(this),  // Add a selectAllow function
+    selectAllow: this.selectAllow.bind(this),
+      // Add a selectAllow function
   };
 
   constructor(private dialog: MatDialog) {}
