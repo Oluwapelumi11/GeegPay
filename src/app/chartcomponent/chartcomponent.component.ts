@@ -97,8 +97,9 @@ generateSpecificData(): EChartsOption {
   return {
     animation:true,
     legend: {
-      show: true,
-      right: 'auto',
+      show: false,
+      right: 70,
+      bottom: 70,
       orient: 'vertical',
       align: 'right'
     },
@@ -116,7 +117,7 @@ generateSpecificData(): EChartsOption {
     },
     toolbox: {
       show: true,
-      itemSize: 50,
+      itemSize: 30,
       feature: {
         saveAsImage: {
           title: 'Save As Image',

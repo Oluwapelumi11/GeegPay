@@ -6,7 +6,7 @@
 
 <div class="sm:w-[94%] sm:h-[1080px] w-full">
     <!-- top bar -->
-    <div class="w-full sm:h-[88px] flex flex-col sm:flex-row h-[70px] sm:bg-[#FAFAFA]  sm:justify-between  sm:items-center  p-4 self-center">
+    <div class="w-full sm:h-[88px] relative flex flex-col sm:flex-row h-[70px] sm:bg-[#FAFAFA]  sm:justify-between  sm:items-center  p-4 self-center">
         <div class="font-jakarta font-semibold  sm:text-xl">
             <p  class="">Dashboard</p>
         </div>
@@ -19,9 +19,14 @@
         
             <div class="sm:w-[253px]  w-5/6 sm:flex hidden justify-between items-center font-inter">
                 <div class="flex  justify-between items-center gap-2">
-                    <img src="../assets/svgs/calender.svg" alt="">
+                    <button (click)="togglecalendar()">
+                        <img src="../assets/svgs/calender.svg" alt="">
+                    </button>
                     <p class="font-inter font-medium text-sm leading-[22px]">November 15, 2023</p>
                 </div>
+                @if (showcalendar){
+                    <app-calendarcomponent class="absolute top-20"></app-calendarcomponent>
+                }
                 <div class="hidden sm:flex w-fit relative ">
                     <img src="../assets/svgs/bell.svg" alt="">
                     <span class="absolute bg-red-500 w-[7px] h-[7px] rounded-full top-2 right-2"></span>
@@ -32,22 +37,26 @@
                 <span class="absolute bg-red-500 w-[7px]  h-[7px] rounded-full top-3 right-3"></span>
             </div>
             <!-- profile div -->
-            <div class="flex justify-between items-center sm:w-[215px] w-[30px]  h-[30px] sm:rounded-[28px] rounded-full sm:border border-[#DADDDD] sm:py-[6px] sm:px-[8px] sm:gap-3 ">
+            <button (click)="showprofile()" class="flex justify-between items-center sm:w-[215px] w-[30px] sm:h-full h-[30px] sm:rounded-[28px] rounded-full sm:border border-[#DADDDD] sm:py-[6px] sm:px-[8px] sm:gap-3 ">
                 <img class="rounded-full w-full h-full" src="../assets/svgs/Rectangle 1061.png" alt="">
                 <div class="font-inter hidden sm:block">
                     <p class="font-normal text-base leading-[19.36px] text-right">Justin Bergson</p>
                     <p class="font-normal  text-sm leading-[16.94px] text-right text-[#787486]">Justin&#64;gmail.com</p>
                 </div>
-
-                <div class="sm:flex hidden justify-center items-center">
+                
+                <div class="sm:flex hidden justify-center items-center w-[60px] ">
                     <img src="../assets/svgs/Arrow - Down 2.svg" alt="">
                 </div>
-            </div>
+            </button>
             <!--end of profile div -->
         </div>
     </div>
     </div>
+    <button class="bg-gray-700" (click)="openDialog()">clickkkkkkkk</button>
     <!--end of  top bar -->
+    <div class=" absolute right-0">
+        profile div here
+    </div>
 <div class="grid  sm:gap-4 gap-2 grid-rows-2">
     <!-- sales trends and summary div -->
     <div class="grid sm:gap-4 gap-2 grid-cols-3">
@@ -59,7 +68,17 @@
 <div class="sm:grid md:gap-4 flex sm:gap-2 grid-cols-3">
 
     <app-tablecomponent class="md:col-span-2 sm:col-span-full sm:p-4 w-full  rounded-[14px] border bg-[#FFFFFF]"></app-tablecomponent>
+    <app-progressive class="md:col-span-1 sm:col-span-full "></app-progressive>
     <div>
         
     </div>
 </div>
+<!-- end of top platform div -->
+</div>
+<!--end of  last orders table and top platform div -->
+</div>
+<!--end of main body div -->
+
+</div>
+<!-- end of main bosy div -->
+
