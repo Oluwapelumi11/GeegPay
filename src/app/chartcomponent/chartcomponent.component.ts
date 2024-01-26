@@ -37,7 +37,7 @@ export class ChartcomponentComponent implements AfterViewInit{
     if (isPlatformBrowser(this.platformId)) {
       setTimeout(() => {
     this.options = this.generateSpecificData()
-  },500)
+  })
 };
     
   
