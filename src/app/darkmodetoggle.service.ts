@@ -5,7 +5,7 @@ import { HostBinding, Injectable, computed, signal } from '@angular/core';
 })
 export class DarkmodetoggleService {
 
-  darkMode = signal<boolean>(true);
+  darkMode = signal<boolean>(false);
   protected readonly darkMode$ = computed(() => this.darkMode());
 
   setDarkMode() {
