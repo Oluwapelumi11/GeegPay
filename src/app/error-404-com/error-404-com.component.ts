@@ -8,7 +8,7 @@ import { RouterModule } from '@angular/router';
   template: `
    <div class="grid grid-cols-5 gap-4 w-[94vw]  h-screen  px-0 py-0 relative sm:px-4 sm:py-5  ">
         <div class="sm:col-span-2 col-span-full flex flex-col  items-center justify-center w-full sm:h-screen">
-            <img src="../assets/svgs/404.svg" class=" w-full sm:h-[30vh] h-[20vh]" alt="">
+            <img src="../assets/svgs/404.svg" class=" sm:w-2/5 w-full sm:h-[30vh] h-[20vh]" alt="">
             <img src="../assets/svgs/bot.svg" class=" w-full sm:h-[30vh] h-[20vh]" alt="">
         </div>
         <div class="sm:col-span-3 col-span-full text-center flex flex-col items-center justify-center">

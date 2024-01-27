@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-sidenavcomponent',
@@ -9,8 +10,8 @@ import { RouterModule } from '@angular/router';
                 <!-- top navigation div -->
     <div class="w-full h-[488px] flex flex-col gap-[10px] justify-between bg-[#FAFAFA] ">
         <div class="flex sm:justify-center justify-between pr-2 pl-3 py-3 items-center sm:px-0 sm:py-0">
-            <div class="flex items-center">
-                <a [routerLink]="" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="bg-opacity-70"><img src="../assets/svgs/Vector.svg" alt=""></a>
+            <div [routerLink]="['']" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="bg-opacity-70" class="flex items-center">
+                <a [routerLink]="['']" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="bg-opacity-70"><img src="../assets/svgs/Vector.svg" alt=""></a>
                 <p class="text-[#26282C] sm:hidden flex px-3 text-2xl font-semibold font-jakarta first-letter:text-[#34CAA5] first-letter:text-3xl">GeegPay</p>
             </div>
             
@@ -24,53 +25,55 @@ import { RouterModule } from '@angular/router';
         </button>
             
         </div>
-        <div class="flex group relative font-bold sm:justify-center text-right  bg-opacity-0 transition-all ease-in-out duration-700 px-3 sm:px-0 bg-gray-300 py-2" data-tooltip-placement="right" data-tooltip-target="dashboard">
+        <div [routerLink]="['']" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="bg-opacity-70" class="flex group relative font-bold sm:justify-center text-right  bg-opacity-0 transition-all ease-in-out duration-700 px-3 sm:px-0 bg-gray-300 py-2" data-tooltip-placement="right" data-tooltip-target="dashboard">
             <a [routerLink]="['']" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="bg-opacity-70" ><img src="../assets/svgs/category.svg" alt=""></a>
-            <p class="text-[#26282C] px-3 flex sm:hidden ">Dashboard</p>
-            <div class="absolute right-0">
-                <img class="" src="../assets/svgs/Vector active.svg" alt="">
-                
-            </div>
+            <a  class="text-[#26282C] px-3 flex sm:hidden ">Dashboard</a>
+            
+            <span [routerLink]="['']" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active" class=" yy absolute right-0 hidden group-hover:flex">
+                    <img  class="" src="../assets/svgs/Vector active.svg" alt="">
+                    
+            </span>
+            
         </div>
         <div id="dashboard" role="tooltip" class="absolute z-10 hidden invisible sm:inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-500 whitespace-nowrap bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
                 Dashboard
             <div class="tooltip-arrow" data-popper-arrow></div>
             </div>
-                <div class="flex  group relative font-bold sm:justify-center text-right hover: bg-opacity-0 transition-all ease-in-out duration-700 px-3 sm:px-0 bg-gray-300 py-2"  data-tooltip-placement="right" data-tooltip-target="sales">
+                <div [routerLink]="'/metrics'" routerLinkActive="bg-opacity-70" class="flex  group relative font-bold sm:justify-center text-right hover: bg-opacity-0 transition-all ease-in-out duration-700 px-3 sm:px-0 bg-gray-300 py-2"  data-tooltip-placement="right" data-tooltip-target="sales">
 
             <a [routerLink]="'/metrics'" routerLinkActive="bg-opacity-70"><img src="../assets/svgs/trend-up.svg" alt=""></a>
-            <p class="text-[#26282C] px-3 flex sm:hidden ">Sales Metrics</p>
+            <a class="text-[#26282C] px-3 flex sm:hidden ">Sales Metrics</a>
             
-            <a class="absolute right-0 hidden group-hover:flex">
+            <span [routerLink]="['/metrics']" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active" class=" yy absolute right-0 hidden group-hover:flex">
                 <img class="" src="../assets/svgs/Vector active.svg" alt="">
                 
-            </a>
+            </span>
         </div>
         <div id="sales" role="tooltip" class="absolute z-10 hidden invisible sm:inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-500 whitespace-nowrap bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
                 Sales Metrics
             <div class="tooltip-arrow" data-popper-arrow></div>
             </div>
-                <div class="flex group relative font-bold sm:justify-center text-right hover: bg-opacity-0 transition-all ease-in-out duration-700 px-3 sm:px-0 bg-gray-300 py-2"  data-tooltip-placement="right" data-tooltip-target="profile">
+                <div [routerLink]="'profile'" routerLinkActive="bg-opacity-70" class="flex group relative font-bold sm:justify-center text-right hover: bg-opacity-0 transition-all ease-in-out duration-700 px-3 sm:px-0 bg-gray-300 py-2"  data-tooltip-placement="right" data-tooltip-target="profile">
 
             <a [routerLink]="'profile'" routerLinkActive="bg-opacity-70"><img src="../assets/svgs/profile-2user.svg" alt=""></a>
-            <p class="text-[#26282C] px-3 flex sm:hidden ">Profile</p>
+            <a class="text-[#26282C] px-3 flex sm:hidden ">Profile</a>
 
-            <a class="absolute right-0 hidden group-hover:flex">
+            <span [routerLink]="['/profile']" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active" class=" yy absolute right-0 hidden group-hover:flex">
                 <img class="" src="../assets/svgs/Vector active.svg" alt="">
-            </a>
+</span>
         </div>
         <div id="profile" role="tooltip" class="absolute z-10 hidden invisible sm:inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-500 whitespace-nowrap bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
                 Profile
             <div class="tooltip-arrow" data-popper-arrow></div>
             </div>
-                <div class="flex group relative font-bold sm:justify-center text-right hover: bg-opacity-0 transition-all ease-in-out duration-700 px-3 sm:px-0 bg-gray-300 py-2"  data-tooltip-placement="right" data-tooltip-target="clients">
+                <div [routerLink]="'clients'" routerLinkActive="bg-opacity-70" class="flex group relative font-bold sm:justify-center text-right hover: bg-opacity-0 transition-all ease-in-out duration-700 px-3 sm:px-0 bg-gray-300 py-2"  data-tooltip-placement="right" data-tooltip-target="clients">
 
             <a [routerLink]="'clients'" routerLinkActive="bg-opacity-70"><img src="../assets/svgs/box.svg" alt=""></a>
-            <p class="text-[#26282C] px-3 flex sm:hidden ">Clients</p>
+            <a [routerLink]="'clients'" routerLinkActive="bg-opacity-70" class="text-[#26282C] px-3 flex sm:hidden ">Clients</a>
 
-            <a class="absolute right-0 hidden group-hover:flex">
+            <span [routerLink]="['/clients']" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active" class=" yy absolute right-0 hidden group-hover:flex">
                 <img class="" src="../assets/svgs/Vector active.svg" alt="">
-            </a>
+</span>
         </div>
         <div id="clients" role="tooltip" class="absolute z-10 hidden invisible sm:inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-500 whitespace-nowrap bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
                 Clients
@@ -79,23 +82,23 @@ import { RouterModule } from '@angular/router';
         <div class="flex group relative font-bold sm:justify-center text-right hover: bg-opacity-0 transition-all ease-in-out duration-700 px-3 sm:px-0 bg-gray-300 py-2"  data-tooltip-placement="right" data-tooltip-target="proms">
 
             <a [routerLink]="'promotions'" routerLinkActive="bg-opacity-70"><img src="../assets/svgs/discount-shape.svg" alt=""></a>
-            <p class="text-[#26282C] px-3 flex sm:hidden ">Promotions</p>
-            <a class="absolute right-0 hidden group-hover:flex">
+            <a  [routerLink]="'promotions'" routerLinkActive="bg-opacity-70" class="text-[#26282C] px-3 flex sm:hidden ">Promotions</a>
+            <span [routerLink]="['/promotions']" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active" class=" yy absolute right-0 hidden group-hover:flex">
                 <img class="" src="../assets/svgs/Vector active.svg" alt="">
-            </a>
+</span>
         </div>
         <div id="proms" role="tooltip" class="absolute z-10 hidden invisible sm:inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-500 whitespace-nowrap bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
                 Promotions
             <div class="tooltip-arrow" data-popper-arrow></div>
             </div>
-        <div class="flex group relative font-bold sm:justify-center text-right hover: bg-opacity-0 transition-all ease-in-out duration-700 px-3 sm:px-0 bg-gray-300 py-2"  data-tooltip-placement="right" data-tooltip-target="info">
+        <div [routerLink]="'informations'" routerLinkActive="bg-opacity-70" class="flex group relative font-bold sm:justify-center text-right hover: bg-opacity-0 transition-all ease-in-out duration-700 px-3 sm:px-0 bg-gray-300 py-2"  data-tooltip-placement="right" data-tooltip-target="info">
 
                     <a [routerLink]="'informations'" routerLinkActive="bg-opacity-70"><img src="../assets/svgs/info-circle.svg" alt=""></a>
-                    <p class="text-[#26282C] px-3 flex sm:hidden ">Informations</p>
+                    <a class="text-[#26282C] px-3 flex sm:hidden ">Informations</a>
                     
-                    <a class="absolute right-0 hidden group-hover:flex">
+                    <span [routerLink]="['/informations']" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active" class=" yy absolute right-0 hidden group-hover:flex">
                         <img class="" src="../assets/svgs/Vector active.svg" alt="">
-                    </a>
+</span>
                 </div>
                 <div id="info" role="tooltip" class="absolute z-10 hidden invisible sm:inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-500 whitespace-nowrap bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
                         Informations
@@ -116,7 +119,7 @@ import { RouterModule } from '@angular/router';
     <!--end of top navigation div -->
     <!-- bottom navigation div -->
     <div class="w-full h-[152px]  flex flex-col gap-[16px] bg-[#FAFAFA] items-center justify-end  sm:justify-evenly">
-        <div class="hidden sm:flex"  data-tooltip-placement="right" data-tooltip-target="go">
+        <div [routerLink]="'geegpay'" routerLinkActive="bg-opacity-70" class="hidden sm:flex"  data-tooltip-placement="right" data-tooltip-target="go">
            <a [routerLink]="'geegpay'" routerLinkActive="bg-opacity-70">
             <img src="../assets/svgs/arrow-right.svg" alt=""> 
            </a>
@@ -125,7 +128,7 @@ import { RouterModule } from '@angular/router';
                 <div class="tooltip-arrow" data-popper-arrow></div>
                 </div>
         </div>
-        <div class="hidden sm:flex"  data-tooltip-placement="right" data-tooltip-target="settings">
+        <div  [routerLink]="" routerLinkActive="bg-opacity-70" class="hidden sm:flex"  data-tooltip-placement="right" data-tooltip-target="settings">
             <a [routerLink]="" routerLinkActive="bg-opacity-70" >
              <img src="../assets/svgs/setting-2.svg" alt=""> 
             </a>
@@ -134,7 +137,7 @@ import { RouterModule } from '@angular/router';
                 <div class="tooltip-arrow" data-popper-arrow></div>
                 </div>
          </div>
-         <div class="hidden sm:flex"  data-tooltip-placement="right" data-tooltip-target="logout">
+         <div  [routerLink]="'logout'" routerLinkActive="bg-opacity-70" class="hidden sm:flex"  data-tooltip-placement="right" data-tooltip-target="logout">
             <a [routerLink]="'logout'" routerLinkActive="bg-opacity-70">
              <img src="../assets/svgs/logout.svg" alt=""> 
             </a>
@@ -143,24 +146,23 @@ import { RouterModule } from '@angular/router';
                 <div class="tooltip-arrow" data-popper-arrow></div>
                 </div>
          </div>
-         <div class="flex sm:hidden group  relative font-bold sm:justify-center text-right hover: bg-opacity-0 w-full transition-all ease-in-out duration-700 px-3 sm:px-0 bg-gray-300 py-2"  >
+         <div [routerLink]="'settings'" routerLinkActive="bg-opacity-70"  class="flex sm:hidden group  relative font-bold sm:justify-center text-right hover: bg-opacity-0 w-full transition-all ease-in-out duration-700 px-3 sm:px-0 bg-gray-300 py-2"  >
              
         <a [routerLink]="'settings'" routerLinkActive="bg-opacity-70"><img src="../assets/svgs/setting-2.svg" alt=""></a>
-        <p class="text-[#26282C] px-3 flex sm:hidden ">Settings</p>
+        <a class="text-[#26282C] px-3 flex sm:hidden ">Settings</a>
 
-        <a class="absolute right-0 hidden group-hover:flex">
+        <span [routerLink]="['/settings']" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active" class=" yy absolute right-0 hidden group-hover:flex">
             <img class="" src="../assets/svgs/Vector active.svg" alt="">
-        </a>
-        
+</span>
     </div>
-    <div class="flex group relative w-full sm:hidden font-bold sm:justify-center text-right hover: bg-opacity-0 transition-all ease-in-out duration-700 px-3 sm:px-0 bg-gray-300 py-2"  >
+    <div  [routerLink]="'logout'" routerLinkActive="bg-opacity-70" class="flex group relative w-full sm:hidden font-bold sm:justify-center text-right hover: bg-opacity-0 transition-all ease-in-out duration-700 px-3 sm:px-0 bg-gray-300 py-2"  >
         
         <a [routerLink]="'logout'" routerLinkActive="bg-opacity-70"><img src="../assets/svgs/logout.svg" alt=""></a>
-        <p class="text-[#26282C] px-3 flex sm:hidden ">Logout</p>
+        <a class="text-[#26282C] px-3 flex sm:hidden ">Logout</a>
         
-        <a class="absolute right-0 hidden group-hover:flex">
+        <span [routerLink]="['/logout']" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active" class=" yy absolute right-0 hidden group-hover:flex">
             <img class="" src="../assets/svgs/Vector active.svg" alt="">
-        </a>
+</span>
     </div>
 </div>
     <!--end of bottom navigation div -->
@@ -170,4 +172,10 @@ import { RouterModule } from '@angular/router';
 })
 export class SidenavcomponentComponent {
 
+
+    constructor(private router: Router) {}
+
+  isActive(route: string): boolean {
+    return this.router.isActive(route, true);
+  }
 }
