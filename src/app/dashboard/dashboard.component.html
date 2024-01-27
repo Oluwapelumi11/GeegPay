@@ -1,0 +1,102 @@
+<div class="sm:w-full sm:h-[1080px] px-0 py-0 relative sm:px-4 sm:py-5  ">
+    <!-- top bar -->
+    <!-- <div class=" sm:h-[88px] relative flex flex-col  sm:flex-row h-[70px] sm:bg-[#FAFAFA]  sm:justify-between  sm:items-center  p-4 self-center">  -->
+        <div class="md:flex block">
+        <div class="font-jakarta font-semibold flex justify-between py-4 sm:text-xl w-full px-4 sm:py-3">
+            <p  class="">Dashboard</p>
+            <button data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar" aria-controls="default-sidebar" type="button"  class="active:bg-transparent bg-transparent focus:ring-0 flex sm:hidden " id="navtoggle" >
+                  
+                  <svg width="24" id="open" class="" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect y="5" width="24" height="2" fill="#D9D9D9"/>
+                          <rect x="9" y="12" width="15" height="2" fill="#D9D9D9"/>
+                          </svg>
+                      </button>
+        </div> 
+        
+        <div class=" w-full space-x-4 h-fit">
+        <div class="flex  items-center px-1    sm:gap-5">
+            <form action="" class="flex w-4/6  sm:h-[48px] h-[35px] items-center sm:w-[349px]  rounded-3xl mx-3 border border-[#DADDDD] text-[#DADDDD] bg-white pl-4 gap-2">
+                <img src="../assets/svgs/search.svg" class="w-[18px] h-[18px]" alt="">
+                <input type="text" placeholder="Search.." class="rounded-full placeholder:text-[#A3A3A3] w-4/5 text-gray-700 h-full placeholder:font-inter ring-0 outline-none focus:ring-0 focus:border-none border-none focus:outline-none">
+            </form>
+        <!-- <div class="flex-1"></div> -->
+            <div class="sm:w-[253px] w-fit  flex justify-between items-center font-inter">
+                <div class="flex  justify-between items-center gap-2">
+                    <button (click)="togglecalendar()">
+                        <img src="../assets/svgs/calender.svg" alt="">
+                    </button>
+                    <p class="font-inter font-medium hidden md:flex text-sm leading-[22px]">November 15, 2023</p>
+                </div>
+                @if (showcalendar){
+                    <div class="absolute right-3 w-fit h-fit sm:right-44 top-[7rem] z-50 bg-gray-200 rounded-lg ">
+                        <app-calendarcomponent class=""></app-calendarcomponent>
+                    </div>
+                }
+                <div class="hidden sm:flex w-fit relative ">
+                    <img src="../assets/svgs/bell.svg" alt="">
+                    <span class="absolute bg-red-500 w-[7px] h-[7px] rounded-full top-3 right-3"></span>
+                </div>
+              
+            </div>
+            <div class="w-fit relative flex sm:hidden">
+                <img src="../assets/svgs/bell.svg" class="w-[45px] h-[50px]"  alt="">
+                <span class="absolute bg-red-500 w-[7px]  h-[7px] rounded-full top-3 right-3"></span>
+            </div>
+        
+            <!-- profile div -->
+            <div (click)="showprofile()" class="flex justify-between  items-center sm:w-[215px] w-[30px] sm:h-full h-[30px] sm:rounded-[28px] rounded-full sm:border border-[#DADDDD] sm:py-[6px] sm:px-[8px] sm:gap-3 ">
+                <img class="rounded-full w-full h-full" src="../assets/svgs/Rectangle 1061.png" alt="">
+                <div class="font-inter hidden sm:block">
+                    <p class="font-normal text-base leading-[19.36px] text-right">Justin Bergson</p>
+                    <p class="font-normal  text-sm leading-[16.94px] text-right text-[#787486]">Justin&#64;gmail.com</p>
+                </div>
+                
+                <div class="sm:flex hidden justify-center items-center w-[60px] ">
+                    <img src="../assets/svgs/Arrow - Down 2.svg" alt="">
+                </div>
+            </div>
+            <!--end of profile div -->
+        </div>
+    
+    </div>
+</div>
+    <!-- <button class="bg-gray-700 hidden" (click)="openDialog()">clickkkkkkkk</button> -->
+    <!--end of  top bar -->
+    <!-- <div class=" absolute right-0 hidden">
+        profile div here
+    </div> -->
+<div class="grid   sm:gap-4 gap-2 grid-rows-2 bg-[#FAFAFA]">
+    <!-- sales trends and summary div -->
+    <div class="grid sm:gap-4 gap-2 grid-cols-3 ">
+            <app-chartcomponent class="sm:col-span-2 bg-white rounded -md col-span-full py-3" ></app-chartcomponent>
+            
+       
+            <app-summarycomponent class="sm:col-span-1 bg-white rounded-md col-span-full py-3 grid sm:gap-4 gap-2 grid-cols-2 sm:p-4 p-1"></app-summarycomponent>
+
+</div>
+<div class="sm:grid md:gap-4 sm:gap-2 grid-cols-3">
+
+    <app-tablecomponent class="md:col-span-2 col-span-full sm:p-4 w-full py-3 rounded-[14px] border bg-[#FFFFFF]"></app-tablecomponent>
+
+
+    <div class=" col-span-full md:col-span-1 px-3 gap-4 bg-white rounded-xl">
+
+        <div class="w-full flex justify-between px-3  py-4 font-jakarta ">
+            <p class="font-semibold text-lg text-[#26282C]">Top Platform</p>
+            <p class="text-[#34CAA5] font-medium text-lg">See All</p>
+        </div>
+        <div class="h-[23rem] overflow-y-auto">
+            @for (progress of progressDataList; track $index) {
+                <app-progressive  [progress]="progress" ngxIntersection (intersection)="onIntersection(onIntersectionCasting($event))" ></app-progressive>
+            }
+        </div>
+    </div>
+    
+</div>
+<!-- end of top platform div -->
+</div>
+<div class="h-10 block w-full">
+    
+</div>
+<!--end of  last orders table and top platform div -->
+</div>
