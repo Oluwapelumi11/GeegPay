@@ -6,14 +6,14 @@ import { Component } from '@angular/core';
   imports: [],
   template: `
     <!-- last orders div -->
-                                <div class="w-full flex justify-between bg-[#FFFFFF] rounded-t-xl  px-4 sm:px-0 sm:py-0 py-2 font-jakarta ">
+                                <div class="w-full flex justify-between bg-[#FFFFFF] dark:bg-gray-300 rounded-t-xl  px-4 sm:px-0 sm:py-0 py-2 font-jakarta ">
                                     <p class="font-semibold text-lg text-[#26282C]">Last Orders</p>
                                     <p class="text-[#34CAA5] font-medium text-lg">See All</p>
                                 </div>
-                                <div class="px-4 py-4 w-full bg-[#FFFFFF] rounded-b-xl  overflow-x-auto h-[23rem] overflow-y-auto">
+                                <div class="px-4 py-4 w-full bg-[#FFFFFF] dark:bg-gray-300 rounded-b-xl  overflow-x-auto h-[23rem] overflow-y-auto">
                                     <table class="table-auto w-full h-fit  text-left rounded-xl ">
                                         <thead class="border-b border-[#EDF2F6] sm:h-[5rem] h-[2rem]" >
-                                            <tr class="font-jakarta text-left font-semibold sm:font-medium sm:text-base text-[9px] self-center text-[#9CA4AB]">
+                                            <tr class="font-jakarta text-left font-semibold sm:font-medium sm:text-base text-[9px] self-center dark:text-gray-800 text-[#9CA4AB]">
                                                 <th class="px-2 sm:py-3 py-1 w-2/5 ">Name</th>
                                                 <th class="px-2 sm:py-3 py-1 w-1/5">Date</th>
                                                 <th class="px-2 sm:py-3 py-1 w-2/5 ">Amount</th>

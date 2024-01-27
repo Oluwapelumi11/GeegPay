@@ -1,5 +1,5 @@
 import { isPlatformBrowser, } from '@angular/common';
-import {  AfterViewInit, Component, Inject, OnInit, PLATFORM_ID} from '@angular/core';
+import {  AfterViewInit, Component, HostBinding, Inject, OnInit, PLATFORM_ID} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { SummarycomponentComponent } from './summarycomponent/summarycomponent.component';
 import { initFlowbite } from 'flowbite';
@@ -12,6 +12,7 @@ import { MAT_DIALOG_DATA, MatDialog, MatDialogModule, MatDialogRef } from '@angu
 import { ProgressiveComponent } from './progressive/progressive.component';
 import { IntersectionObserverModule } from 'ngx-intersection-observer';
 import { ProgressData } from './generals';
+import { DarkmodetoggleService } from './darkmodetoggle.service';
 
 
 @Component({
@@ -28,5 +29,11 @@ import { ProgressData } from './generals';
 export class AppComponent {
   title = 'GeegPay';
   
+  @HostBinding('class.dark') get mode() {
+    return this.darkModeService.darkMode();
+  }
+  constructor( private darkModeService: DarkmodetoggleService){
+
+  }
 
 }

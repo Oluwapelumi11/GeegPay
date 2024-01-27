@@ -18,7 +18,7 @@ import { ProgressData } from '../generals';
      
       <div class=" px-4 py-3">
     <p class="text-xl font-semibold py-1 mb-2 text-[#22242C]">{{progress.name}}</p>
-    <div class="w-full h-3 bg-gray-300 rounded">
+    <div class="w-full h-3 bg-gray-300  dark:bg-gray-100 rounded">
         <div class="h-full  rounded transition-all" [style.background-color]="getColor(progress.progress)" [style.width.%]="progress.progress"></div>
     </div>
     <div class="flex justify-between mt-4">

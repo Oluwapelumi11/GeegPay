@@ -1,5 +1,5 @@
 import { isPlatformBrowser, } from '@angular/common';
-import {  AfterViewInit, Component, Inject, OnInit, PLATFORM_ID} from '@angular/core';
+import {  AfterViewInit, Component, HostBinding, Inject, OnInit, PLATFORM_ID} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { SummarycomponentComponent } from '../summarycomponent/summarycomponent.component';
 import { initFlowbite } from 'flowbite';
@@ -12,6 +12,7 @@ import { MAT_DIALOG_DATA, MatDialog, MatDialogModule, MatDialogRef } from '@angu
 import { ProgressiveComponent } from '../progressive/progressive.component';
 import { IntersectionObserverModule } from 'ngx-intersection-observer';
 import { ProgressData } from '../generals';
+import { DarkmodetoggleService } from '../darkmodetoggle.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -39,12 +40,18 @@ onIntersectionCasting($event: any): { target: Element; visible: boolean } {
 
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object,private dialogRef: MatDialogRef<EventModalComponentComponent>,
-  @Inject(MAT_DIALOG_DATA) public data: any, private dialog: MatDialog) {}
+  @Inject(MAT_DIALOG_DATA) public data: any, private dialog: MatDialog, private darkModeService: DarkmodetoggleService) {}
   ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {
     initFlowbite();
     }
   }
+
+  @HostBinding('class.dark') get mode() {
+    return this.darkModeService.darkMode();
+  }
+
+  
   
   togglecalendar(): Boolean {
     return this.showcalendar = !this.showcalendar

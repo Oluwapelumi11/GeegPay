@@ -1,9 +1,10 @@
 import { isPlatformBrowser } from '@angular/common';
-import { AfterViewInit, ChangeDetectionStrategy, Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, HostBinding, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import type { EChartsOption, SeriesOption } from 'echarts';
 import { NgxEchartsDirective,provideEcharts } from 'ngx-echarts';
 import { graphic } from 'echarts';
+import { DarkmodetoggleService } from '../darkmodetoggle.service';
 
 
 @Component({
@@ -17,7 +18,7 @@ import { graphic } from 'echarts';
   template: `
     @defer () {
 
-<div echarts [options]="options" class="demo-chart"></div>
+<div id="mychart" echarts [options]="options" class="demo-chart"></div>
 }
   `,
   styleUrl: './chartcomponent.component.css'
@@ -30,21 +31,27 @@ export class ChartcomponentComponent implements AfterViewInit{
   selectedColumnIndex: number | null = null;  // Initialize here
 
   options : EChartsOption = {};
-  constructor(@Inject(PLATFORM_ID) private platformId: any) {}
+  constructor(@Inject(PLATFORM_ID) private platformId: any, private darkModeService: DarkmodetoggleService) {}
 
 
   ngAfterViewInit(): void {  
     if (isPlatformBrowser(this.platformId)) {
       setTimeout(() => {
-    this.options = this.generateSpecificData()
-  })
+        this.updateChartOptions();
+      });
 };
     
   
 };
 
+@HostBinding('class.dark') get mode() {
+  return this.darkModeService.darkMode();
+}
+
+
     
 generateSpecificData(): EChartsOption {
+  const darkMode = this.darkModeService.darkMode();
   const data = [
     { name: "Jan", value: 6000 },
     { name: "Feb", value: 15000 },
@@ -72,8 +79,8 @@ generateSpecificData(): EChartsOption {
       itemStyle: {
         color: (params: any) => {
           const colorStops = [
-            { offset: 0, color: 'rgba(52, 203, 165, 0.8)' },
-            { offset: 1, color: 'rgba(52, 203, 165, 0.2)' },
+            { offset: 0, color: darkMode ? 'rgba(75, 192, 192, 1)' : 'rgba(52, 203, 165, 1)' },
+            { offset: 1, color: darkMode ? 'rgba(75, 192, 192, 0.4)' : 'rgba(52, 203, 165, 0.2)' },
           ];
           return new graphic.LinearGradient(0, 0, 0, 1, colorStops);
         },
@@ -152,4 +159,9 @@ generateSpecificData(): EChartsOption {
   };
 }
 
+updateChartOptions() {
+  this.options = this.generateSpecificData();
 }
+}
+
+

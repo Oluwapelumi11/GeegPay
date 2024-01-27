@@ -1,4 +1,4 @@
-<div class="sm:w-full sm:h-[1080px] px-0 py-0 relative sm:px-4 sm:py-5  ">
+<div class="sm:w-full sm:h-[1080px] px-0 py-0 relative  sm:px-4 sm:py-5  ">
     <!-- top bar -->
     <!-- <div class=" sm:h-[88px] relative flex flex-col  sm:flex-row h-[70px] sm:bg-[#FAFAFA]  sm:justify-between  sm:items-center  p-4 self-center">  -->
         <div class="md:flex block">
@@ -15,9 +15,9 @@
         
         <div class=" w-full space-x-4 h-fit">
         <div class="flex  items-center px-1    sm:gap-5">
-            <form action="" class="flex w-4/6  sm:h-[48px] h-[35px] items-center sm:w-[349px]  rounded-3xl mx-3 border border-[#DADDDD] text-[#DADDDD] bg-white pl-4 gap-2">
+            <form action="" class="flex w-4/6 dark:bg-gray-300 sm:h-[48px] h-[35px] items-center sm:w-[349px]  rounded-3xl mx-3 border border-[#DADDDD] text-[#DADDDD] bg-white pl-4 gap-2">
                 <img src="../assets/svgs/search.svg" class="w-[18px] h-[18px]" alt="">
-                <input type="text" placeholder="Search.." class="rounded-full placeholder:text-[#A3A3A3] w-4/5 text-gray-700 h-full placeholder:font-inter ring-0 outline-none focus:ring-0 focus:border-none border-none focus:outline-none">
+                <input type="text" placeholder="Search.." class="rounded-full placeholder:text-[#A3A3A3] w-full dark:bg-gray-300 text-gray-700 h-full placeholder:font-inter ring-0 outline-none focus:ring-0 focus:border-none border-none focus:outline-none">
             </form>
         <!-- <div class="flex-1"></div> -->
             <div class="sm:w-[253px] w-fit  flex justify-between items-center font-inter">
@@ -44,11 +44,11 @@
             </div>
         
             <!-- profile div -->
-            <div (click)="showprofile()" class="flex justify-between  items-center sm:w-[215px] w-[30px] sm:h-full h-[30px] sm:rounded-[28px] rounded-full sm:border border-[#DADDDD] sm:py-[6px] sm:px-[8px] sm:gap-3 ">
+            <div (click)="showprofile()" class="flex justify-between  items-center sm:w-[215px] w-[30px] sm:h-full h-[30px] sm:rounded-[28px] dark:text-gray-100 rounded-full sm:border border-[#DADDDD] dark:border-gray-400 sm:py-[6px] sm:px-[8px] sm:gap-3 ">
                 <img class="rounded-full w-full h-full" src="../assets/svgs/Rectangle 1061.png" alt="">
                 <div class="font-inter hidden sm:block">
                     <p class="font-normal text-base leading-[19.36px] text-right">Justin Bergson</p>
-                    <p class="font-normal  text-sm leading-[16.94px] text-right text-[#787486]">Justin&#64;gmail.com</p>
+                    <p class="font-normal  text-sm leading-[16.94px] text-right text-[#787486] dark:text-gray-200">Justin&#64;gmail.com</p>
                 </div>
                 
                 <div class="sm:flex hidden justify-center items-center w-[60px] ">
@@ -65,29 +65,29 @@
     <!-- <div class=" absolute right-0 hidden">
         profile div here
     </div> -->
-<div class="grid   sm:gap-4 gap-2 grid-rows-2 bg-[#FAFAFA]">
+<div class="grid   sm:gap-4 gap-2 grid-rows-2 bg-[#FAFAFA] dark:bg-gray-500">
     <!-- sales trends and summary div -->
-    <div class="grid sm:gap-4 gap-2 grid-cols-3 ">
-            <app-chartcomponent class="sm:col-span-2 bg-white rounded -md col-span-full py-3" ></app-chartcomponent>
+    <div class="grid sm:gap-4 gap-2 grid-cols-3 dark:bg-gray-500 ">
+            <app-chartcomponent class="sm:col-span-2 dark:bg-gray-400 px-4 bg-white  rounded -md col-span-full py-3" ></app-chartcomponent>
             
        
-            <app-summarycomponent class="sm:col-span-1 bg-white rounded-md col-span-full py-3 grid sm:gap-4 gap-2 grid-cols-2 sm:p-4 p-1"></app-summarycomponent>
+            <app-summarycomponent class="sm:col-span-1  rounded-md col-span-full py-3 grid sm:gap-4 gap-2 grid-cols-2 sm:p-4 p-1"></app-summarycomponent>
 
 </div>
-<div class="sm:grid md:gap-4 sm:gap-2 grid-cols-3">
+<div class="sm:grid md:gap-4 sm:gap-2 grid-cols-3 ">
 
-    <app-tablecomponent class="md:col-span-2 col-span-full sm:p-4 w-full py-3 rounded-[14px] border bg-[#FFFFFF]"></app-tablecomponent>
+    <app-tablecomponent class="md:col-span-2 col-span-full sm:p-4 w-full py-3 rounded-[14px] border dark:bg-gray-300 bg-[#FFFFFF]"></app-tablecomponent>
 
 
-    <div class=" col-span-full md:col-span-1 px-3 gap-4 bg-white rounded-xl">
+    <div class=" col-span-full md:col-span-1 px-3 gap-4 dark:bg-gray-300  bg-white rounded-xl">
 
-        <div class="w-full flex justify-between px-3  py-4 font-jakarta ">
+        <div class="w-full flex justify-between px-3 bg-white dark:bg-gray-300  py-4 font-jakarta ">
             <p class="font-semibold text-lg text-[#26282C]">Top Platform</p>
             <p class="text-[#34CAA5] font-medium text-lg">See All</p>
         </div>
-        <div class="h-[23rem] overflow-y-auto">
+        <div class="h-[23rem] overflow-y-auto ">
             @for (progress of progressDataList; track $index) {
-                <app-progressive  [progress]="progress" ngxIntersection (intersection)="onIntersection(onIntersectionCasting($event))" ></app-progressive>
+                <app-progressive   [progress]="progress" ngxIntersection (intersection)="onIntersection(onIntersectionCasting($event))" ></app-progressive>
             }
         </div>
     </div>

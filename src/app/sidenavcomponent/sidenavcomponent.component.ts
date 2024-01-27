@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { isPlatformServer } from '@angular/common';
+import { Component, HostBinding, Inject, PLATFORM_ID, computed, effect, signal } from '@angular/core';
 import { RouterModule, Router } from '@angular/router';
+import { DarkmodetoggleService } from '../darkmodetoggle.service';
 
 
 @Component({
@@ -8,7 +10,7 @@ import { RouterModule, Router } from '@angular/router';
   imports: [RouterModule],
   template: `
                 <!-- top navigation div -->
-    <div class="w-full h-[488px] flex flex-col gap-[10px] justify-between bg-[#FAFAFA] ">
+    <div class="dark:bg-gray-800 w-full h-[488px] flex flex-col gap-[10px] justify-between bg-[#FAFAFA] ">
         <div class="flex sm:justify-center justify-between pr-2 pl-3 py-3 items-center sm:px-0 sm:py-0">
             <div [routerLink]="['']" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="bg-opacity-70" class="flex items-center">
                 <a [routerLink]="['']" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="bg-opacity-70"><img src="../assets/svgs/Vector.svg" alt=""></a>
@@ -106,19 +108,19 @@ import { RouterModule, Router } from '@angular/router';
                     </div>
         <div class="flex relative justify-center">
 
-            <button class="w-[46px] hidden h-[92px] rounded-[100px] sm:flex flex-col  bg-[#FFFFFF] p-[8px] gap-[16px] ">
-                <div>
+            <div  class="w-[46px] hidden h-[92px] rounded-[100px] sm:flex flex-col  bg-[#FFFFFF] p-[8px] gap-[16px] ">
+                <button (click)="toggleDarkMode()" >
                     <img src="../assets/svgs/Frame 427319676.svg" alt="">
-                </div>
-                <div>
+</button >
+                <button (click)="toggleDarkMode()">
                 <img src="../assets/svgs/moon 1.svg" alt="">
-            </div>
-        </button>
+</button>
+</div>
     </div>
     </div>
     <!--end of top navigation div -->
     <!-- bottom navigation div -->
-    <div class="w-full h-[152px]  flex flex-col gap-[16px] bg-[#FAFAFA] items-center justify-end  sm:justify-evenly">
+    <div class=" w-full h-[152px]  flex flex-col gap-[16px] bg-[#FAFAFA] dark:bg-gray-800 items-center justify-end  sm:justify-evenly">
         <div [routerLink]="'geegpay'" routerLinkActive="bg-opacity-70" class="hidden sm:flex"  data-tooltip-placement="right" data-tooltip-target="go">
            <a [routerLink]="'geegpay'" routerLinkActive="bg-opacity-70">
             <img src="../assets/svgs/arrow-right.svg" alt=""> 
@@ -172,10 +174,14 @@ import { RouterModule, Router } from '@angular/router';
 })
 export class SidenavcomponentComponent {
 
-
-    constructor(private router: Router) {}
-
-  isActive(route: string): boolean {
-    return this.router.isActive(route, true);
-  }
+    @HostBinding('class.dark') get mode() {
+        return this.darkModeService.darkMode();
+      }
+    
+      constructor(private darkModeService: DarkmodetoggleService) {}
+    
+      toggleDarkMode() {
+        this.darkModeService.setDarkMode();
+      }
+        
 }
