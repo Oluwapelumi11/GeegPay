@@ -23,7 +23,7 @@ import { Component } from '@angular/core';
         </button>
             
         </div>
-        <div class="flex group relative font-bold sm:justify-center text-right hover:bg-opacity-70 bg-opacity-0 transition-all ease-in-out duration-700 px-3 sm:px-0 bg-gray-300 py-2">
+        <div class="flex group relative font-bold sm:justify-center text-right hover:bg-opacity-70 bg-opacity-0 transition-all ease-in-out duration-700 px-3 sm:px-0 bg-gray-300 py-2" data-tooltip-placement="right" data-tooltip-target="dashboard">
             <a href=""><img src="../assets/svgs/category.svg" alt=""></a>
             <p class="text-[#26282C] px-3 flex sm:hidden ">Dashboard</p>
             <div class="absolute right-0">
@@ -31,17 +31,25 @@ import { Component } from '@angular/core';
                 
             </div>
         </div>
-                <div class="flex  group relative font-bold sm:justify-center text-right hover:bg-opacity-70 bg-opacity-0 transition-all ease-in-out duration-700 px-3 sm:px-0 bg-gray-300 py-2">
+        <div id="dashboard" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-500 whitespace-nowrap bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                Dashboard
+            <div class="tooltip-arrow" data-popper-arrow></div>
+            </div>
+                <div class="flex  group relative font-bold sm:justify-center text-right hover:bg-opacity-70 bg-opacity-0 transition-all ease-in-out duration-700 px-3 sm:px-0 bg-gray-300 py-2"  data-tooltip-placement="right" data-tooltip-target="sales">
 
             <a href=""><img src="../assets/svgs/trend-up.svg" alt=""></a>
             <p class="text-[#26282C] px-3 flex sm:hidden ">Sales Metrics</p>
-
+            
             <a class="absolute right-0 hidden group-hover:flex">
                 <img class="" src="../assets/svgs/Vector active.svg" alt="">
-
+                
             </a>
         </div>
-                <div class="flex group relative font-bold sm:justify-center text-right hover:bg-opacity-70 bg-opacity-0 transition-all ease-in-out duration-700 px-3 sm:px-0 bg-gray-300 py-2">
+        <div id="sales" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-500 whitespace-nowrap bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                Sales Metrics
+            <div class="tooltip-arrow" data-popper-arrow></div>
+            </div>
+                <div class="flex group relative font-bold sm:justify-center text-right hover:bg-opacity-70 bg-opacity-0 transition-all ease-in-out duration-700 px-3 sm:px-0 bg-gray-300 py-2"  data-tooltip-placement="right" data-tooltip-target="profile">
 
             <a href=""><img src="../assets/svgs/profile-2user.svg" alt=""></a>
             <p class="text-[#26282C] px-3 flex sm:hidden ">Profile</p>
@@ -50,7 +58,11 @@ import { Component } from '@angular/core';
                 <img class="" src="../assets/svgs/Vector active.svg" alt="">
             </a>
         </div>
-                <div class="flex group relative font-bold sm:justify-center text-right hover:bg-opacity-70 bg-opacity-0 transition-all ease-in-out duration-700 px-3 sm:px-0 bg-gray-300 py-2">
+        <div id="profile" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-500 whitespace-nowrap bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                Profile
+            <div class="tooltip-arrow" data-popper-arrow></div>
+            </div>
+                <div class="flex group relative font-bold sm:justify-center text-right hover:bg-opacity-70 bg-opacity-0 transition-all ease-in-out duration-700 px-3 sm:px-0 bg-gray-300 py-2"  data-tooltip-placement="right" data-tooltip-target="clients">
 
             <a href=""><img src="../assets/svgs/box.svg" alt=""></a>
             <p class="text-[#26282C] px-3 flex sm:hidden ">Clients</p>
@@ -59,7 +71,11 @@ import { Component } from '@angular/core';
                 <img class="" src="../assets/svgs/Vector active.svg" alt="">
             </a>
         </div>
-                <div class="flex group relative font-bold sm:justify-center text-right hover:bg-opacity-70 bg-opacity-0 transition-all ease-in-out duration-700 px-3 sm:px-0 bg-gray-300 py-2">
+        <div id="clients" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-500 whitespace-nowrap bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                Clients
+            <div class="tooltip-arrow" data-popper-arrow></div>
+            </div>
+        <div class="flex group relative font-bold sm:justify-center text-right hover:bg-opacity-70 bg-opacity-0 transition-all ease-in-out duration-700 px-3 sm:px-0 bg-gray-300 py-2"  data-tooltip-placement="right" data-tooltip-target="proms">
 
             <a href=""><img src="../assets/svgs/discount-shape.svg" alt=""></a>
             <p class="text-[#26282C] px-3 flex sm:hidden ">Promotions</p>
@@ -67,15 +83,23 @@ import { Component } from '@angular/core';
                 <img class="" src="../assets/svgs/Vector active.svg" alt="">
             </a>
         </div>
-                <div class="flex group relative font-bold sm:justify-center text-right hover:bg-opacity-70 bg-opacity-0 transition-all ease-in-out duration-700 px-3 sm:px-0 bg-gray-300 py-2">
+        <div id="proms" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-500 whitespace-nowrap bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                Promotions
+            <div class="tooltip-arrow" data-popper-arrow></div>
+            </div>
+        <div class="flex group relative font-bold sm:justify-center text-right hover:bg-opacity-70 bg-opacity-0 transition-all ease-in-out duration-700 px-3 sm:px-0 bg-gray-300 py-2"  data-tooltip-placement="right" data-tooltip-target="info">
 
-            <a href=""><img src="../assets/svgs/info-circle.svg" alt=""></a>
-            <p class="text-[#26282C] px-3 flex sm:hidden ">Informations</p>
-
-            <a class="absolute right-0 hidden group-hover:flex">
-                <img class="" src="../assets/svgs/Vector active.svg" alt="">
-            </a>
-        </div>
+                    <a href=""><img src="../assets/svgs/info-circle.svg" alt=""></a>
+                    <p class="text-[#26282C] px-3 flex sm:hidden ">Informations</p>
+                    
+                    <a class="absolute right-0 hidden group-hover:flex">
+                        <img class="" src="../assets/svgs/Vector active.svg" alt="">
+                    </a>
+                </div>
+                <div id="info" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-500 whitespace-nowrap bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                        Informations
+                    <div class="tooltip-arrow" data-popper-arrow></div>
+                    </div>
         <div class="flex relative justify-center">
 
             <button class="w-[46px] hidden h-[92px] rounded-[100px] sm:flex flex-col  bg-[#FFFFFF] p-[8px] gap-[16px] ">
@@ -91,22 +115,34 @@ import { Component } from '@angular/core';
     <!--end of top navigation div -->
     <!-- bottom navigation div -->
     <div class="w-full h-[152px] bg-gray-100 flex flex-col gap-[16px] items-center justify-end  sm:justify-evenly">
-        <div class="hidden sm:flex">
+        <div class="hidden sm:flex"  data-tooltip-placement="right" data-tooltip-target="go">
            <a href="">
             <img src="../assets/svgs/arrow-right.svg" alt=""> 
            </a>
+           <div id="go" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-500 whitespace-nowrap bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                    Visit Site
+                <div class="tooltip-arrow" data-popper-arrow></div>
+                </div>
         </div>
-        <div class="hidden sm:flex">
+        <div class="hidden sm:flex"  data-tooltip-placement="right" data-tooltip-target="settings">
             <a href="" >
              <img src="../assets/svgs/setting-2.svg" alt=""> 
             </a>
+            <div id="settings" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-500 whitespace-nowrap bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                    Settings
+                <div class="tooltip-arrow" data-popper-arrow></div>
+                </div>
          </div>
-         <div class="hidden sm:flex">
+         <div class="hidden sm:flex"  data-tooltip-placement="right" data-tooltip-target="logout">
             <a href="">
              <img src="../assets/svgs/logout.svg" alt=""> 
             </a>
+            <div id="logout" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-500 whitespace-nowrap bg-red-700 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                    Logout
+                <div class="tooltip-arrow" data-popper-arrow></div>
+                </div>
          </div>
-         <div class="flex sm:hidden group  relative font-bold sm:justify-center text-right hover:bg-opacity-70 bg-opacity-0 w-full transition-all ease-in-out duration-700 px-3 sm:px-0 bg-gray-300 py-2">
+         <div class="flex sm:hidden group  relative font-bold sm:justify-center text-right hover:bg-opacity-70 bg-opacity-0 w-full transition-all ease-in-out duration-700 px-3 sm:px-0 bg-gray-300 py-2"  >
              
         <a href=""><img src="../assets/svgs/setting-2.svg" alt=""></a>
         <p class="text-[#26282C] px-3 flex sm:hidden ">Settings</p>
@@ -114,8 +150,9 @@ import { Component } from '@angular/core';
         <a class="absolute right-0 hidden group-hover:flex">
             <img class="" src="../assets/svgs/Vector active.svg" alt="">
         </a>
+        
     </div>
-    <div class="flex group relative w-full sm:hidden font-bold sm:justify-center text-right hover:bg-opacity-70 bg-opacity-0 transition-all ease-in-out duration-700 px-3 sm:px-0 bg-gray-300 py-2">
+    <div class="flex group relative w-full sm:hidden font-bold sm:justify-center text-right hover:bg-opacity-70 bg-opacity-0 transition-all ease-in-out duration-700 px-3 sm:px-0 bg-gray-300 py-2"  >
         
         <a href=""><img src="../assets/svgs/logout.svg" alt=""></a>
         <p class="text-[#26282C] px-3 flex sm:hidden ">Logout</p>

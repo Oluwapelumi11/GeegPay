@@ -85,7 +85,7 @@ showprofile(): Boolean{
 {
   name: 'Book Bazaar',
   amount: '$2,500,000',
-  progress: 80,
+  progress: 90,
   increase: 15
 },
 {
