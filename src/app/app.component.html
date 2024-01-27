@@ -1,6 +1,6 @@
 <div class="w-screen font-jakarta   sm:bg-[#EBECF2] flex">
 
-<app-sidenavcomponent class="md:w-[6%] h-[876px] w-0 font-jakarta border-r hidden py-[20px] gap-[10px]  sm:flex flex-col justify-between"></app-sidenavcomponent>
+<app-sidenavcomponent id="default-sidebar"  class="md:w-[6%] md:h-[876px] bg-gray-100  font-jakarta border-r py-[20px] gap-[10px]  sm:flex flex-col justify-between fixed top-0 left-0 z-40 w-48 h-screen transition-transform -translate-x-full sm:translate-x-0"></app-sidenavcomponent>
 
 
 
@@ -10,7 +10,7 @@
         <div class="md:flex block">
         <div class="font-jakarta font-semibold flex justify-between py-4 sm:text-xl w-full px-4 sm:py-3">
             <p  class="">Dashboard</p>
-            <button (click)="shownav()"  class="active:bg-transparent bg-transparent focus:ring-0 flex sm:hidden " id="navtoggle" >
+            <button data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar" aria-controls="default-sidebar" type="button" (click)="shownav()"  class="active:bg-transparent bg-transparent focus:ring-0 flex sm:hidden " id="navtoggle" >
                 @if (!shown) {    
                   <svg width="24" id="open" class="" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <rect y="5" width="24" height="2" fill="#D9D9D9"/>
@@ -30,7 +30,7 @@
         <div class="flex  items-center px-1    sm:gap-5">
             <form action="" class="flex w-4/6  sm:h-[48px] h-[35px] items-center sm:w-[349px]  rounded-3xl mx-3 border border-[#DADDDD] text-[#DADDDD] bg-white pl-4 gap-2">
                 <img src="../assets/svgs/search.svg" class="w-[18px] h-[18px]" alt="">
-                <input type="text" placeholder="Search.." class="rounded-full placeholder:text-[#A3A3A3] w-4/5 text-gray-700 h-full placeholder:font-inter outline-none border-none focus:outline-none ">
+                <input type="text" placeholder="Search.." class="rounded-full placeholder:text-[#A3A3A3] w-4/5 text-gray-700 h-full placeholder:font-inter ring-0 outline-none focus:ring-0 focus:border-none border-none focus:outline-none">
             </form>
         <!-- <div class="flex-1"></div> -->
             <div class="sm:w-[253px] w-fit  flex justify-between items-center font-inter">
@@ -51,7 +51,7 @@
                 </div>
               
             </div>
-            <div class="w-fit relative flex sm:hidden ">
+            <div class="w-fit relative flex sm:hidden">
                 <img src="../assets/svgs/bell.svg" class="w-[45px] h-[50px]"  alt="">
                 <span class="absolute bg-red-500 w-[7px]  h-[7px] rounded-full top-3 right-3"></span>
             </div>
