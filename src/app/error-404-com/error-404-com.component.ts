@@ -12,9 +12,9 @@ import { RouterModule } from '@angular/router';
             <img src="../assets/svgs/bot.svg" class=" w-full sm:h-[30vh] h-[20vh]" alt="">
         </div>
         <div class="sm:col-span-3 col-span-full text-center flex flex-col items-center justify-center">
-            <p class="font-inter text-[#263238] text-center font-normal leading-normal py-6 sm:text-[70px] text-[35px]">PAGE NOT FOUND</p>
+            <p class="font-inter text-[#263238] text-center font-normal leading-normal py-6 sm:text-[50px] text-[35px]">PAGE NOT FOUND</p>
             <p class="capitalize font-normal font-inter text-[14px] sm:text-[28px] leading-normal md:w-[491px] sm:[300px] w-[261px] text-center py-6  ">we could't find the page you were looking for</p>
-            <a [routerLink]="['']"   class="w-fit hover:opacity-100 opacity-90 rounded-[50px] my-6 bg-[#34CAA5] text-center text-xl capitalize  font-normal font-inter text-black sm:px-16 sm:py-8 px-8 py-4 whitespace-nowrap">Back to Dashboard</a>
+            <a [routerLink]="['']"   class="w-fit hover:opacity-100 opacity-90 rounded-[50px] my-6 bg-[#34CAA5] text-center text-xl capitalize  font-normal font-inter text-black sm:px-10 sm:py-5 px-8 py-4 whitespace-nowrap">Back to Dashboard</a>
         </div>
 
     </div>
