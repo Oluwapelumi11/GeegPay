@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
         <div class="flex sm:justify-center justify-between pr-2 pl-3 py-3 items-center sm:px-0 sm:py-0">
             <div class="flex items-center">
                 <a href=""><img src="../assets/svgs/Vector.svg" alt=""></a>
-                <p class="text-[#26282C] sm:hidden flex px-3 text-xl font-semibold font-jakarta first-letter:text-[#34CAA5] first-letter:text-2xl">GeegPay</p>
+                <p class="text-[#26282C] sm:hidden flex px-3 text-2xl font-semibold font-jakarta first-letter:text-[#34CAA5] first-letter:text-3xl">GeegPay</p>
             </div>
             
             <button class=" w-[46px]  sm:hidden  h-[92px] rounded-[100px] flex flex-col  bg-[#FFFFFF] p-[8px] gap-[16px] ">
